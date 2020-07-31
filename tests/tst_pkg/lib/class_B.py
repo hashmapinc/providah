@@ -11,12 +11,10 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-from providah.factories.obj_fact import ObjFact
+from providah.factories.package_factory import PackageFactory
 
 
-class ClassA:
+class ClassB:
 
     def __init__(self, **kwargs):
-        pass
-
-ObjFact.register('ClassA', ClassA)
+        self.c = PackageFactory.create('ClassC')

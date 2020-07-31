@@ -11,6 +11,10 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-from examples.lib.class_A import ClassA
-from examples.lib.class_B import ClassB
-from examples.lib.sublib.class_C import ClassC
+# from providah.factories.obj_fact import ObjFact
+
+
+class ClassC:
+
+    def __init__(self, **kwargs):
+        pass
