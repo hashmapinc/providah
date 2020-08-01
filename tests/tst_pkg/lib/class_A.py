@@ -18,3 +18,9 @@ class ClassA:
 
     def __init__(self, **kwargs):
         pass
+
+
+class ClassD:
+
+    def __init__(self, **kwargs):
+        pass

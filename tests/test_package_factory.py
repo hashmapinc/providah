@@ -14,16 +14,22 @@
 from unittest import TestCase
 
 from providah.factories.package_factory import PackageFactory
+
 import tst_pkg
+import tst_pkg_2
 
 
 class TestPackageFactory(TestCase):
 
     def test_create_class(self):
-        a = PackageFactory.create('ClassA')
+        a = PackageFactory.create('ClassA', library='tst_pkg')
         self.assertIsInstance(a, tst_pkg.lib.class_A.ClassA)
 
     def test_create_class_with_nest_class(self):
-        b = PackageFactory.create('ClassB')
-        self.assertIsInstance(b, tst_pkg.lib.class_B.ClassB)
-        self.assertIsInstance(b.c, tst_pkg.lib.sublib.class_C.ClassC)
+        b = PackageFactory.create('ClassB', library='tst_pkg_2')
+        self.assertIsInstance(b, tst_pkg_2.lib.class_B.ClassB)
+        self.assertIsInstance(b.c, tst_pkg_2.lib.sublib.class_C.ClassC)
+
+    def test_create_second_class_in_file(self):
+        d = PackageFactory.create('ClassD', library='tst_pkg')
+        self.assertIsInstance(d, tst_pkg.lib.class_A.ClassD)

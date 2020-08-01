@@ -13,4 +13,5 @@
 # limitations under the License.
 from providah.factories.package_factory import PackageFactory
 
+
 PackageFactory.fill_registry()

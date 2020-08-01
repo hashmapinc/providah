@@ -11,3 +11,27 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+
+import setuptools
+
+with open("README.md", "r") as fh:
+    long_description = fh.read()
+
+setuptools.setup(
+    name="providah",
+    version="0.1.1.0",
+    author="John Aven",
+    author_email="accelerators@hashmapinc.com",
+    description="DO NOT USE - This is a sample program",
+    long_description=long_description,
+    long_description_content_type="text/markdown",
+    url="https://gitlab.com/john.aven/providah",
+    packages=setuptools.find_packages(exclude=("tests",)),
+    classifiers=[
+        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: Apache Software License",
+        "Operating System :: OS Independent",
+        "Development Status :: 4 - Beta",
+    ],
+    python_requires='>=3.6',
+)

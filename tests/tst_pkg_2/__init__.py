@@ -13,8 +13,4 @@
 # limitations under the License.
 from providah.factories.package_factory import PackageFactory
 
-
-class ClassB:
-
-    def __init__(self, **kwargs):
-        self.c = PackageFactory.create('ClassC', library='tst_pkg')
+PackageFactory.fill_registry()
