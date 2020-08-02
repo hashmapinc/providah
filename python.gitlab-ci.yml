@@ -6,9 +6,10 @@ test:
   stage: test
   image: python:3.7.7-buster
   script:
-    - pip install -r requirements.txt
+    - pip install -r requirements.txt && pip install coverage
     - nose2 tests
     - prospector
+    - coverage run --source . -m nose2 && coverage report -m
 
 build_and_push:
   stage: build_and_push
