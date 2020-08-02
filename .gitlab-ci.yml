@@ -1,25 +1,3 @@
-stages:
-  - test
-  - build_and_push
-
-test:
-  stage: test
-  image: python:3.7.7-buster
-  script:
-    - pip install -r requirements.txt
-    - nose2 tests
-    - prospector
-
-build_and_push:
-  stage: build_and_push
-  image: python:3.7.7-buster
-  script:
-    - rm -rf dist
-    - pip install -r requirements.txt
-    - pip install twine
-    - python setup.py sdist
-    - twine upload --verbose -u $PYPIUN -p $PYPIPSWD --repository-url https://test.pypi.org/legacy/ dist/*
-
-
 include:
   - template: Dependency-Scanning.gitlab-ci.yml
+  - template: Python-Build-and-Deplyo.gitlab-ci.yml
