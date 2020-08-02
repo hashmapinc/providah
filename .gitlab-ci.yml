@@ -1,3 +1,2 @@
 include:
-  - template: Dependency-Scanning.gitlab-ci.yml
   - local: python.gitlab-ci.yml
