@@ -10,6 +10,7 @@ test:
     - nose2 tests
     - prospector
     - coverage run --source . -m nose2 && coverage report -m
+    - bash <(curl -s https://codecov.io/bash)
 
 build_and_push:
   stage: build_and_push
