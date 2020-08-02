@@ -1,3 +1,3 @@
 include:
   - template: Dependency-Scanning.gitlab-ci.yml
-  - template: Python-Build-and-Deploy.gitlab-ci.yml
+  - template: Python-Build-and-Deploy.yml
