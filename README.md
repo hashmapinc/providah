@@ -1,5 +1,7 @@
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgitlab.com%2Fhashmapinc%2Fctso%2Futilities%2Fprovidah.svg?type=shield)](https://app.fossa.com/projects/git%2Bgitlab.com%2Fhashmapinc%2Fctso%2Futilities%2Fprovidah?ref=badge_shield)
 
+[![codecov](https://codecov.io/gl/hashmapinc:ctso:utilities/providah/branch/development/graph/badge.svg?token=WSR9CIU4A3)](https://codecov.io/gl/hashmapinc:ctso:utilities/providah)
+
 # providah
 
 providah is a small, simple utility. It is an opinionated approach to creating object factories in Python without adding 
