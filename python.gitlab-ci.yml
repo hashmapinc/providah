@@ -21,6 +21,7 @@ test_deploy:
     - pip install -r requirements.txt
     - pip install twine
     - python setup.py sdist
+    - echo $PYPIUN
     - twine upload --verbose -u $PYPIUN -p $PYPIPSWD --repository-url https://test.pypi.org/legacy/ dist/*
   rules:
     - if: $CI_MERGE_REQUEST_IID
