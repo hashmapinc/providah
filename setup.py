@@ -19,7 +19,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="providah",
-    version="0.1.10.0",
+    version="0.1.11.0",
     author="John Aven",
     author_email="accelerators@hashmapinc.com",
     description="DO NOT USE - This is a sample program",
