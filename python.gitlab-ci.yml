@@ -7,10 +7,11 @@ test:
   stage: test
   image: python:3.7.7-buster
   script:
-    - pip install -r requirements.txt && pip install coverage
+    - pip install -r requirements.txt
+    - pip install nose2 coverage prospector
     - nose2 tests
     - prospector
-    - coverage run --omit "tests/*" --source . -m nose2 && coverage report -m
+    - coverage run -m nose2 && coverage report -m
     - bash <(curl -s https://codecov.io/bash)
 
 test_deploy:
