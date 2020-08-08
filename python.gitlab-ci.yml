@@ -14,8 +14,6 @@ test:
     - bash <(curl -s https://codecov.io/bash)
 
 test_deploy:
-  only:
-    - merge_requests
   stage: build_and_push
   image: python:3.7.7-buster
   script:
@@ -24,10 +22,10 @@ test_deploy:
     - pip install twine
     - python setup.py sdist
     - twine upload --verbose -u $PYPIUN -p $PYPIPSWD --repository-url https://test.pypi.org/legacy/ dist/*
+  only:
+    - merge_requests
 
 prod_deploy:
-  only:
-    - master
   stage: build_and_push
   image: python:3.7.7-buster
   script:
@@ -36,3 +34,5 @@ prod_deploy:
     - pip install twine
     - python setup.py sdist
     - twine upload --verbose -u $PYPIUN_PROD -p $PYPIPSWD_PROD --repository-url https://pypi.org/legacy/ dist/*
+  only:
+    - master
