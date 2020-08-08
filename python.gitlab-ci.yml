@@ -14,7 +14,7 @@ test:
     - bash <(curl -s https://codecov.io/bash)
 
 test_deploy:
-  stage: build_and_push
+  stage: test_deploy
   image: python:3.7.7-buster
   script:
     - rm -rf dist
@@ -26,7 +26,7 @@ test_deploy:
     - merge_requests
 
 prod_deploy:
-  stage: build_and_push
+  stage: prod_deploy
   image: python:3.7.7-buster
   script:
     - rm -rf dist
