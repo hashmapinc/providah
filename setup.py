@@ -25,7 +25,7 @@ setuptools.setup(
     description="DO NOT USE - This is a sample program",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://gitlab.com/john.aven/providah",
+    url="https://gitlab.com/hashmapinc/oss/providah",
     packages=setuptools.find_packages(exclude=("tests",)),
     classifiers=[
         "Programming Language :: Python :: 3",
