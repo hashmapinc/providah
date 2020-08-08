@@ -36,7 +36,7 @@ prod_deploy:
     - pip install -r requirements.txt
     - pip install twine
     - python setup.py sdist
-    - twine upload --verbose -u $PYPIUN_PROD -p $PYPIPSWD_PROD --repository-url https://pypi.org/legacy/ dist/*
+    - twine upload --verbose -u $PYPIUN_PROD -p $PYPIPSWD_PROD dist/*
   rules:
     - if: $CI_MERGE_REQUEST_IID
     - if: $CI_COMMIT_TAG
