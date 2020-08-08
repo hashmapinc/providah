@@ -18,6 +18,8 @@ from providah.factories.package_factory import PackageFactory
 import tst_pkg
 import tst_pkg_2
 
+from providah.factories.providah_error import ProvidahError
+
 
 class TestPackageFactory(TestCase):
 
@@ -33,3 +35,20 @@ class TestPackageFactory(TestCase):
     def test_create_second_class_in_file(self):
         d = PackageFactory.create('ClassD', library='tst_pkg')
         self.assertIsInstance(d, tst_pkg.lib.class_A.ClassD)
+
+    def test_key_doesnt_exist(self):
+        with self.assertRaises(ProvidahError):
+            PackageFactory.create('ClassF', library='tst_pkg')
+
+    def test_library_doesnt_exist(self):
+        with self.assertRaises(ProvidahError):
+            PackageFactory.create('ClassD', library='some_package')
+
+    def test_label_doesnt_exist(self):
+        with self.assertRaises(ProvidahError):
+            PackageFactory.create('ClassD', label='some_package')
+
+    def test_duplicate_entries(self):
+        with self.assertRaises(ProvidahError):
+            PackageFactory.create('ClassB')
+

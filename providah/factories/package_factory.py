@@ -113,12 +113,6 @@ class PackageFactory:
                 cls.__logger.error(error_message)
                 raise ProvidahError(error_message)
 
-        # Make sure that there is at least one appropriate entry.
-        if len(entries) == 0:
-            error_message = f'The combination of key {key}, label {label} and library {library} did not provide a unique result'
-            cls.__logger.error(error_message)
-            raise ProvidahError(error_message)
-
         # If more than one entry was found, then the appropriate filters have not been applied.
         if len(entries) > 1:
             error_message = f'The combination of key {key}, label {label}, and library {library} did not return a unique result. A total of {len(entries)} ' \
