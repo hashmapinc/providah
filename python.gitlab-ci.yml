@@ -26,7 +26,7 @@ test_deploy:
   rules:
     - if: $CI_MERGE_REQUEST_IID
     - if: $CI_COMMIT_TAG
-    - if: $CI_COMMIT_BRANCH == "development"
+    - if: $CI_COMMIT_BRANCH == "master"
 
 prod_deploy:
   stage: prod_deploy
