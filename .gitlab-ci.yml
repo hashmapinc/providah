@@ -1,0 +1,2 @@
+include:
+  - local: python.gitlab-ci.yml
