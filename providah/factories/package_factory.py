@@ -75,14 +75,14 @@ class PackageFactory:
                key: str,
                library: str = None,
                label: str = None,
-               **kwargs) -> Any:
+               configuration: dict = None) -> Any:
         """
         Generate a class instance given the key and configuration parameters.
         Args:
             key: name to reference the class from the registry
             library: name of library that the application is from.
             label: label used to identify a class - possible linked to a monkey-patched version or a sub-application specific class.
-            **kwargs: Configuration parameters as key-word arguments
+            configuration: Configuration parameters as key-word arguments
 
         Returns:
             Configured instance of class requested.
@@ -121,7 +121,7 @@ class PackageFactory:
             raise ProvidahError(error_message)
 
         # Return instantiated and configured class.
-        return entries[0].class_def(**kwargs)
+        return entries[0].class_def(**configuration)
 
     @classmethod
     def fill_registry(cls, path: str = None,
