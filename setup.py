@@ -19,10 +19,10 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="providah",
-    version="0.1.13.0",
+    version="0.1.15.0",
     author="John Aven",
     author_email="accelerators@hashmapinc.com",
-    description="DO NOT USE - This is a sample program",
+    description="DO NOT USE - This is a beta package",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://gitlab.com/hashmapinc/oss/providah",
