@@ -121,6 +121,8 @@ class PackageFactory:
             raise ProvidahError(error_message)
 
         # Return instantiated and configured class.
+        if not configuration:
+            configuration = {}
         return entries[0].class_def(**configuration)
 
     @classmethod
