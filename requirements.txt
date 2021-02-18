@@ -10,7 +10,7 @@ pep8-naming==0.10.0
 pycodestyle==2.6.0
 pydocstyle==5.0.2
 pyflakes==2.2.0
-pylint==2.5.2
+pylint==2.6.1
 pylint-celery==0.3
 pylint-django==2.0.15
 pylint-flask==0.6
